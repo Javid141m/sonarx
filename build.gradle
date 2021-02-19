@@ -1,7 +1,7 @@
 plugins {
     id 'java'
     id 'jacoco'
-    id 'org.sonarqube' version '3.0'
+    id "org.sonarqube" version "3.1.1"
     id 'com.palantir.docker-compose' version '0.25.0'
 }
 plugins {
@@ -22,9 +22,14 @@ dependencies {
 }
 
 sonarqube {
-    properties {
-        property 'sonar.host.url', 'http://localhost:9000'
-    }
+  properties {
+    property "sonar.projectKey", "Javid141m_sonarx"
+    property "sonar.organization", "hasty"
+    property "sonar.host.url", "https://sonarcloud.io"
+  }
 }
 
 tasks['sonarqube'].dependsOn test
+
+
+
